@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Clube de Membros</h1>
+    <p class="lead">Aplicação clube de membros gerada para Moonshapes</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Formulário</h2>
+        <p>
+            Formulário que permite a introdução dos membros do clube
+        </p>
+        <p>@Html.ActionLink("Formulario", "Create", "Users", null, new { @class = "btn btn-primary btn-small" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Lista de Imagens</h2>
+        <p>Listagem das imagens dos membros do clube</p>
+        <p>@Html.ActionLink("Galeria", "List", "Users", null, new { @class = "btn btn-primary btn-small" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>XML Backup</h2>
+        <p>Backup dos membros do clube para xml assim como a reposição de dados</p>
+        <p>@Html.ActionLink("Utilizadores", "Index", "Users", null, new { @class = "btn btn-primary btn-small" })</p>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+﻿@using X.PagedList.Mvc;
+@model X.PagedList.PagedList<Moonshapes.Models.User>
+
+@{
+    ViewBag.Title = "Galeria";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<h2>Galeria</h2>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model){
+            <div class="col-lg-4 col-sm-12">
+                <div class="imageBottomPadding imageWidths">
+                    @{ 
+                        var imagePath = item.Foto.Substring(item.Foto.LastIndexOf("\\")+1);
+
+                        DateTime now = DateTime.Today;
+                        int age = now.Year - item.DataNascimento.Year;
+                        if (now < item.DataNascimento.AddYears(age)) {
+                            age--;
+                        };
+
+                        var borderColor = "";
+                        if (age <= 20)
+                        {
+                            borderColor = "#0eff00"; // verde
+                        } else if(age >= 21 && age <= 60)
+                        {
+                            borderColor = "#ff0000"; // vermelho
+                        } else if( age >= 61)
+                        {
+                            borderColor = "#1d00ff"; // azul
+                        }
+                    }
+                    <img style="border:5px solid @borderColor" src="~/Images/@imagePath" alt="Image" width="100px" height="100px" />
+                </div>
+            </div>
+         }
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            @Html.PagedListPager(Model, pagina => Url.Action("List", new { pagina }))
+      </div>
+</div>
+
+<style>
+    .imageWidths {
+        width: 100px;
+    }
+
+    .imageBottomPadding {
+        padding-bottom: 20px;
+    }
+</style>

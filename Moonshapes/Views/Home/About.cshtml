@@ -1,0 +1,18 @@
+﻿@{
+	ViewBag.Title = "Sobre";
+}
+<br />
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Deverá ser criado um formulário em que se adicione o endereço de email do membro do clube, ao inserir deverá verificar por ajax se o membro já existe, se já existir não deverá deixar inserir, avisando o utilizador.</p>
+<p>A tabela deverá ter as seguintes colunas:</p>
+<li>Nome</li>
+<li>Email</li>
+<li>Data Nascimento</li>
+<li>Fotografia</li>
+<br />
+<p>A tabela deverá ser ordenável por drag and drop e permitir delete's. As fotos deverão ser gravadas localmente e ao fazer delete deverá anular também a foto do disco.</p>
+<p>Tudo deverá ser guardado em base de dados para que ao fechar e abrir o browser mantenha a 100% o estado.</p>
+<p>Após esta mini-base de dados deverá ser criada uma página de apresentação que exiba 6 membros de cada vez com foto sem utilizar o elemento HTML table, se o membro tiver menos de 20 anos deverá ter border a verde, entre 21 e 60 a vermelho, maior que 60 a azul (criar pelo menos um elemento de cada), esta página deverá ter paging por ajax.</p>
+<p>Por fim, no formulario, deverão existir dois botões, um para gravar todos os dados em xml, outro para ler o ficheiro xml</p>
